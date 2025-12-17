@@ -1,7 +1,7 @@
 import { FeatureItem, NavItem, SlideData } from './types';
 
 export const COLORS = {
-  primary: '#0B6E4F',
+  primary: '#005EB5',
   accent: '#F6B042',
   text: '#1F2937',
 };
@@ -36,7 +36,7 @@ export const HERO_SLIDES: SlideData[] = [
   },
   {
     id: 2,
-    image: '/assets/hero-tour.jpeg',
+    image: '/assets/tour-hero.jpg',
     title: 'Explore the Mystic Island',
     subtitle: 'Guided tours to waterfalls, beaches, and mountains.',
     ctaText: 'See Tours',
@@ -55,75 +55,92 @@ export const HERO_SLIDES: SlideData[] = [
 export const FEATURED_ROOMS: FeatureItem[] = [
   {
     id: 1,
-    title: 'Deluxe Garden View',
-    description: 'Spacious room with a private balcony overlooking our lush tropical garden. King size bed and AC.',
+    title: 'Deluxe Double Room',
+    description: 'Perfect for couples. Comfortable double bed, air conditioning, and en-suite bathroom.',
     price: '₱2,500 / night',
     imageUrl: '/assets/hero-room.jpeg',
-    tag: 'Bestseller'
+    images: [
+      '/assets/hero-room.jpeg',
+      '/assets/hero-room.jpeg', // Placeholder for now
+      '/assets/hero-room.jpeg'  // Placeholder for now
+    ],
+    // tag: 'Bestseller'
   },
   {
     id: 2,
-    title: 'Cozy Double',
-    description: 'Perfect for couples. Comfortable double bed, air conditioning, and en-suite bathroom.',
+    title: 'Family Room',
+    description: 'Bunk beds perfect for families to stay while enjoying the island',
     price: '₱1,800 / night',
     imageUrl: '/assets/hero-room.jpeg',
+    images: [
+      '/assets/hero-room.jpeg',
+      '/assets/hero-room.jpeg',
+      '/assets/hero-room.jpeg'
+    ],
   },
-  {
-    id: 3,
-    title: 'Backpacker Dorm',
-    description: 'Clean, air-conditioned dormitory with secure lockers. Great for meeting fellow travelers.',
-    price: '₱600 / bed',
-    imageUrl: '/assets/hero-room.jpeg',
-  }
 ];
 
 export const FEATURED_TOURS: FeatureItem[] = [
   {
     id: 1,
-    title: 'Cambugahay Falls Adventure',
+    title: 'Island Tour',
     description: 'Visit the famous three-tiered waterfalls. Tarzan swing included!',
-    price: 'from ₱1,500',
-    imageUrl: '/assets/cambugahay-tour.jpeg',
+    checklist: [
+      'Driver/Tour Guide',
+      'Gasoline',
+      'Your own destination choices'
+    ],
+    price: 'from ₱2,800',
+    imageUrl: '/assets/tour1.jpg',
   },
   {
     id: 2,
-    title: 'Coastal Beach Hopping',
+    title: 'Port Pickup or Dropoff',
     description: 'Discover the hidden white sand beaches of San Juan and Lazi.',
-    price: 'from ₱1,200',
-    imageUrl: '/assets/beaches-tour.jpeg',
+    checklist: [
+      'Siquijor port pickup or dropoff ₱700.00',
+      'Larena port pickup or dropoff ₱1000.00'
+    ],
+    price: 'from ₱700',
+    imageUrl: '/assets/tour2.jpg',
   },
-  // {
-  //   id: 3,
-  //   title: 'Mountain View Sunset',
-  //   description: 'Ride up to the highest peak for a breathtaking sunset view.',
-  //   price: 'from ₱1,000',
-  //   imageUrl: 'https://picsum.photos/600/400?random=9',
-  // }
+  {
+    id: 3,
+    title: 'Tuktuk/Baobao',
+    description: 'Ride up to the highest peak for a breathtaking sunset view.',
+    checklist: [
+      'Siquijor port pickup or dropoff ₱400.00',
+      'Larena port pickup or dropoff ₱700.00',
+      'island tour ₱1,800.00'
+    ],
+    price: 'from ₱400',
+    imageUrl: '/assets/Tuktuk.jpeg',
+  }
 ];
 
 export const MOTORBIKE_HIGHLIGHTS: FeatureItem[] = [
   {
     id: 1,
-    title: 'Honda Click 125cc',
+    title: 'Honda Click',
     description: 'Reliable, automatic, and perfect for island roads.',
-    price: '₱400 / day',
+    price: '₱500 / day',
     imageUrl: '/assets/hero-motor.jpeg',
     tag: 'Popular'
   },
   {
     id: 2,
-    title: 'Honda CRF 150',
+    title: 'Honda Beat',
     description: 'For those who want to explore off the beaten path.',
-    price: '₱800 / day',
+    price: '₱400 / day',
     imageUrl: '/assets/hero-motor.jpeg',
   },
-  {
-    id: 3,
-    title: 'Yamaha NMAX 155',
-    description: 'Ultimate comfort for long rides around the circumference.',
-    price: '₱600 / day',
-    imageUrl: '/assets/hero-motor.jpeg',
-  }
+  // {
+  //   id: 3,
+  //   title: 'Yamaha NMAX 155',
+  //   description: 'Ultimate comfort for long rides around the circumference.',
+  //   price: '₱600 / day',
+  //   imageUrl: '/assets/hero-motor.jpeg',
+  // }
 ];
 
 // export const GALLERY_IMAGES = [

@@ -10,10 +10,10 @@ const Footer: React.FC = () => {
           {/* Brand */}
           <div className="space-y-4">
             <div className="flex items-center gap-2">
-               <div className="h-8 w-8 rounded-full bg-tropical-500 flex items-center justify-center">
-                  <span className="font-bold text-white">GnR</span>
+               <div className="h-10 w-10 rounded-full bg-white flex items-center justify-center">
+                  <img src="/assets/logo.png" width={100}/>
                </div>
-               <span className="text-xl font-bold tracking-tight">Guest House Siquijor</span>
+               <span className="text-xl font-bold tracking-tight">G'NR Guest House Siquijor</span>
             </div>
             <p className="text-gray-400 text-sm max-w-xs">
               Experience the best of Siquijor Island with our comfortable rooms, guided tours, and reliable motorbike rentals.
@@ -49,7 +49,7 @@ const Footer: React.FC = () => {
                  <Facebook size={20} />
                </a>
                <a href="#" className="p-2 bg-gray-800 rounded-full hover:bg-tropical-500 transition-colors">
-                 <Twitter size={20} />
+                 <img src="/assets/booking.png" width={25}/>
                </a>
              </div>
              <a 

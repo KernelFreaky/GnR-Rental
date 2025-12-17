@@ -13,7 +13,9 @@ export interface FeatureItem {
   description: string;
   price?: string;
   imageUrl: string;
+  images?: string[];
   tag?: string;
+  checklist?: string[];
 }
 
 export interface NavItem {

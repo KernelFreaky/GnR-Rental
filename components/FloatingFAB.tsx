@@ -52,6 +52,15 @@ const FloatingFAB: React.FC = () => {
               <span className="text-sm font-semibold">Directions</span>
               <MapPin size={20} />
             </a>
+
+            <a 
+              href="#contact"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 rounded-full bg-blue-800 px-4 py-2 text-white shadow-lg"
+            >
+              <span className="text-sm font-semibold">Booking.com</span>
+                <img src="/assets/booking.png" width={25}/>
+            </a>
           </motion.div>
         )}
       </AnimatePresence>

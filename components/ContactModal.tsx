@@ -80,6 +80,18 @@ const ContactModal: React.FC<ContactModalProps> = ({ isOpen, onClose }) => {
                     <p className="text-sm text-gray-600">{CONTACT_INFO.phone}</p>
                   </div>
                 </a>
+
+                <a
+                  href="#"
+                  className="flex items-center gap-4 rounded-xl border border-blue-100 bg-blue-100 p-4 transition-all hover:bg-blue-200 hover:shadow-md group"
+                >
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-white text-white shadow-sm group-hover:scale-110 transition-transform">
+                    <img src="/assets/booking.png" width={25}/>
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-gray-900">Booking.com</h4>
+                  </div>
+                </a>
               </div>
             </div>
           </motion.div>

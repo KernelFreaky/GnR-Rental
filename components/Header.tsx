@@ -32,11 +32,9 @@ const Header: React.FC<HeaderProps> = ({ onContactClick }) => {
         <div className="mx-auto flex max-w-[1200px] items-center justify-between px-4">
           {/* Logo */}
           <a href="#" className="flex items-center gap-2">
-             <div className={`h-8 w-8 rounded-full ${isScrolled ? 'bg-tropical-500' : 'bg-white'} flex items-center justify-center p-5`}>
-                <span className={`font-bold ${isScrolled ? 'text-white' : 'text-tropical-500'}`}>GnR</span>
-             </div>
+              <img src="/assets/logo.png" width={100}/>
              <span className={`text-lg font-bold tracking-tight ${isScrolled ? 'text-dark-900' : 'text-white'}`}>
-               GnR Guest House Siquijor
+               G'NR Guest House Siquijor
              </span>
           </a>
 

@@ -4,22 +4,35 @@ import HeroSlider from './components/HeroSlider';
 import Footer from './components/Footer';
 import FloatingFAB from './components/FloatingFAB';
 import ContactModal from './components/ContactModal';
+import RoomDetailModal from './components/RoomDetailModal';
 import { FeatureCard } from './components/ui/Card';
 import { Button } from './components/ui/Button';
+import { FeatureItem } from './types';
 import { 
   HERO_SLIDES, 
   FEATURED_ROOMS, 
   FEATURED_TOURS, 
   MOTORBIKE_HIGHLIGHTS, 
-  GALLERY_IMAGES,
   CONTACT_INFO 
 } from './constants';
 import { ArrowRight, MapPin, Mail, Phone, CheckCircle } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isContactModalOpen, setIsContactModalOpen] = useState(false);
+  const [selectedRoom, setSelectedRoom] = useState<FeatureItem | null>(null);
+  const [isRoomModalOpen, setIsRoomModalOpen] = useState(false);
 
   const openContact = () => setIsContactModalOpen(true);
+
+  const openRoomDetail = (room: FeatureItem) => {
+    setSelectedRoom(room);
+    setIsRoomModalOpen(true);
+  };
+
+  const closeRoomDetail = () => {
+    setIsRoomModalOpen(false);
+    setSelectedRoom(null);
+  };
 
   return (
     <div className="relative min-h-screen font-sans text-dark-900">
@@ -60,7 +73,7 @@ const App: React.FC = () => {
               Check Availability <ArrowRight size={18} className="ml-1" />
             </button>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {FEATURED_ROOMS.map(room => (
               <FeatureCard 
                 key={room.id}
@@ -70,7 +83,8 @@ const App: React.FC = () => {
                 price={room.price}
                 tag={room.tag}
                 ctaText="Book Now"
-                onCtaClick={openContact}
+                onCtaClick={() => openRoomDetail(room)}
+                onClick={() => openRoomDetail(room)}
               />
             ))}
           </div>
@@ -91,6 +105,7 @@ const App: React.FC = () => {
                 image={tour.imageUrl}
                 title={tour.title}
                 description={tour.description}
+                checklist={tour.checklist}
                 price={tour.price}
                 ctaText="Inquire Tour"
                 onCtaClick={openContact}
@@ -108,7 +123,7 @@ const App: React.FC = () => {
                 <h2 className="text-3xl md:text-4xl font-bold text-tropical-500 mb-4">Motorbike Rentals</h2>
                 <p className="text-lg text-gray-600 mb-6">The best way to see the island is on two wheels. Well-maintained bikes, helmets included.</p>
                 <ul className="space-y-3 mb-8">
-                  {['Automatic & Manual options', 'Helmets included', '24-hour rental periods', 'Gas station nearby'].map(item => (
+                  {['Automatic', 'Helmets included', '24-hour rental periods', 'Gas station nearby'].map(item => (
                     <li key={item} className="flex items-center text-gray-700">
                       <CheckCircle className="text-sand-500 mr-2" size={20} />
                       {item}
@@ -216,6 +231,11 @@ const App: React.FC = () => {
       <Footer />
       <FloatingFAB />
       <ContactModal isOpen={isContactModalOpen} onClose={() => setIsContactModalOpen(false)} />
+      <RoomDetailModal 
+        isOpen={isRoomModalOpen} 
+        onClose={closeRoomDetail} 
+        room={selectedRoom} 
+      />
     </div>
   );
 };
